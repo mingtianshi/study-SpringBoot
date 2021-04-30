@@ -1,17 +1,3 @@
 spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/paigu_1
-    username: root
-    password: root
-    hikari:
-      data-source-properties:
-        useSSL: false
-        serverTimezone: GMT+8
-        useUnicode: true
-        characterEncoding: utf8
-        # 这个必须要加，否则 Activiti 自动建表会失败
-        nullCatalogMeansCurrent: true
-  activiti:
-    history-level: full
-    db-history-used: true
-server.
+  profiles:
+    active: dev
