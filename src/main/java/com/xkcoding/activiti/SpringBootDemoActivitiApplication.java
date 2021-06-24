@@ -1,7 +1,11 @@
 package com.xkcoding.activiti;
 
+import com.sun.glass.ui.Application;
+import javafx.scene.Parent;
+import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 
 /**
  * <p>
@@ -15,8 +19,18 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringBootDemoActivitiApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootDemoActivitiApplication.class, args);
+//        SpringApplication.run(SpringBootDemoActivitiApplication.class, args);
+        new SpringApplicationBuilder()
+                .sources(Parent.class)
+                .child(SpringBootDemoActivitiApplication.class)
+                .run(args);
+
+     /*   SpringApplication springApplication = new SpringApplication(SpringBootDemoActivitiApplication.class);
+        springApplication.run();
+        springApplication.setBannerMode(Banner.Mode.OFF);
+        springApplication.run(args);*/
     }
+    //repositories
 
 }
 
